@@ -23,7 +23,15 @@ public class Player : MonoBehaviour
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
 
+    [Header("Animation Player")]
+    public string boolRun = "Run";
+    public Animator animator;
+    public float playerSwipeDuration;
+    public string boolSpeed = "Speed";
+
+
     private float _currentSpeed;
+    private bool _isRunning = false;
 
 
     private void Update()
@@ -34,22 +42,50 @@ public class Player : MonoBehaviour
     private void HandleMoviment()
     {
         if (Input.GetKey(KeyCode.RightShift))
-
+        {
             _currentSpeed = speedRun;
+            animator.SetBool(boolSpeed, true);
+        }
         else
+        {
             _currentSpeed = speed;
-        
+            animator.SetBool(boolSpeed, false);
+
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             //myRigidbody.MovePosition(myRigidbody.position - velocity * Time.deltaTime);
             myRigidbody.velocity = new Vector2(-_currentSpeed,myRigidbody.velocity.y);
-        
+            //myRigidbody.transform.localScale = new Vector3(-1, 1 ,1);
+            //animator.SetBool(boolRun, true);
+            
+            if (myRigidbody.transform.localScale.x != -1)
+            {
+                myRigidbody.transform.DOScaleX(-1, playerSwipeDuration);
+            }
+            animator.SetBool(boolRun, true);
+
+
         }
         else if(Input.GetKey(KeyCode.D))
         {
             //myRigidbody.MovePosition(myRigidbody.position + velocity * Time.deltaTime);
             myRigidbody.velocity = new Vector2(_currentSpeed, myRigidbody.velocity.y);
+            //myRigidbody.transform.localScale = new Vector3 (1, 1, 1);
+            //animator.SetBool(boolRun, true);
+            if (myRigidbody.transform.localScale.x != 1)
+            {
+                myRigidbody.transform.DOScaleX(1, playerSwipeDuration);
+            }
+            animator.SetBool(boolRun, true);
         }
+        else
+        {
+            animator.SetBool(boolRun, false);
+
+        }
+
 
         if (myRigidbody.velocity.x > 0)
         {
