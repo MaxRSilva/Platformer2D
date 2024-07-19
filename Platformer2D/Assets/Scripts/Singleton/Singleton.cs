@@ -7,12 +7,12 @@ namespace Core.Singleton
 {
   public class Singleton<T> : MonoBehaviour where T: MonoBehaviour
   {
-        public T instance;
+        public static T Instance;
 
         private void Awake()
         {
-            if (instance == null)
-                instance = gameObject.AddComponent<T>();
+            if (Instance == null)
+                Instance = gameObject.AddComponent<T>();
             else
                 Destroy(gameObject);
 
