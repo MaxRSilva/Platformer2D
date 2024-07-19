@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public float playerSwipeDuration;
     public string boolSpeed = "Speed";
+    public string boolJump = "Jump";
 
 
     private float _currentSpeed;
@@ -80,7 +81,7 @@ public class Player : MonoBehaviour
             }
             animator.SetBool(boolRun, true);
         }
-        else
+        else 
         {
             animator.SetBool(boolRun, false);
 
@@ -101,19 +102,24 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
           myRigidbody.velocity = Vector2.up * forcejump;
-          myRigidbody.transform.localScale = Vector2.one;
+          //myRigidbody.transform.localScale = Vector2.one;
 
             DOTween.Kill(myRigidbody.transform);
             Handlescalejump();
-                   
+            animator.SetBool(boolJump, true);
+        }
         
+        else
+        {
+            animator.SetBool(boolJump, false);
+
         }
     }
 
     private void Handlescalejump()
     {
-        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2,LoopType.Yoyo).SetEase(ease);
-        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        //myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2,LoopType.Yoyo).SetEase(ease);
+        //myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
 
        
 
