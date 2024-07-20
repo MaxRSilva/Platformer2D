@@ -20,16 +20,6 @@ public class FlashColors : MonoBehaviour
         } 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-          Flash();
-         
-        }
-         
-    }
-
     public void Flash()
     {
         if (_currentTween != null)
