@@ -586,7 +586,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!1 &104194146
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +624,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &104194148
 Rigidbody2D:
   serializedVersion: 4
@@ -896,7 +900,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &131292227
 Rigidbody2D:
   serializedVersion: 4
@@ -1056,7 +1062,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &211639792
 Rigidbody2D:
   serializedVersion: 4
@@ -1322,7 +1330,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &296825189
 Rigidbody2D:
   serializedVersion: 4
@@ -2236,7 +2246,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &489603405
 Rigidbody2D:
   serializedVersion: 4
@@ -3816,7 +3828,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &919052556
 Rigidbody2D:
   serializedVersion: 4
@@ -5041,7 +5055,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &1322070945
 Rigidbody2D:
   serializedVersion: 4
@@ -5588,6 +5604,19 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 25
+--- !u!114 &1466447350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872775273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe83a62e3841f64b9ca39ea86b7fc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1753296662}
 --- !u!1 &1469302924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5623,7 +5652,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &1469302926
 Rigidbody2D:
   serializedVersion: 4
@@ -6191,7 +6222,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 0}
+  timeToDestroy: 1
 --- !u!50 &1733491928
 Rigidbody2D:
   serializedVersion: 4
@@ -6376,6 +6409,7 @@ MonoBehaviour:
   speed: 15
   forcejump: 27
   speedRun: 18
+  healthBase: {fileID: 1753296663}
   jumpScaleY: 1.5
   jumpScaleX: 0.7
   DownScaleX: 0
@@ -6385,6 +6419,7 @@ MonoBehaviour:
   animator: {fileID: 1466447348}
   playerSwipeDuration: 0.1
   boolSpeed: Speed
+  triggerDeath: Death
   boolJump: Jump
 --- !u!114 &1753296663
 MonoBehaviour:
@@ -6399,8 +6434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 10
-  delayToKill: 0.5
-  destroyOnKill: 1
+  delayToKill: 1
+  destroyOnKill: 0
   _flashColor: {fileID: 1753296665}
 --- !u!70 &1753296664
 CapsuleCollider2D:
@@ -6951,7 +6986,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!95 &1844601607
 Animator:
   serializedVersion: 5
@@ -6988,7 +7023,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 1844601607}
   trigerAttack: Attack
+  trigerDeath: Death
   healthBase: {fileID: 1844601609}
+  timeToDestroy: 1
 --- !u!114 &1844601609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7003,7 +7040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   delayToKill: 0.1
-  destroyOnKill: 1
+  destroyOnKill: 0
   _flashColor: {fileID: 0}
 --- !u!114 &1844601610
 MonoBehaviour:

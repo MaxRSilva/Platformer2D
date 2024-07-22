@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Sprites;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class HealthBase : MonoBehaviour
 {
+    public Action OnKill;
     public int startLife = 10;
     public float delayToKill = 0f;
     public bool destroyOnKill = false;
@@ -52,8 +54,12 @@ public class HealthBase : MonoBehaviour
         if (destroyOnKill)
         {
             Destroy(gameObject, delayToKill);
+
             
-        } 
+        }
+
+        OnKill?.Invoke();
+    
     }   
         
 }

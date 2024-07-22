@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float forcejump = 2;
     public float speedRun;
+    public HealthBase healthBase;
 
     [Header("Animation Setup")]
 
@@ -28,11 +29,27 @@ public class Player : MonoBehaviour
     public Animator animator;
     public float playerSwipeDuration;
     public string boolSpeed = "Speed";
+    public string triggerDeath = "Death";
     public string boolJump = "Jump";
 
 
     private float _currentSpeed;
     private bool _isRunning = false;
+
+
+    private void Awake()
+    {
+        if(healthBase != null)
+        {
+            healthBase.OnKill += OnPlayerKill;
+        }
+    }
+    
+    private void OnPlayerKill()
+    {
+        healthBase.OnKill -= OnPlayerKill;
+        animator.SetTrigger(triggerDeath);
+    }
 
 
     private void Update()
@@ -132,7 +149,10 @@ public class Player : MonoBehaviour
         
     }*/
     
-    
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
 
 }
 
