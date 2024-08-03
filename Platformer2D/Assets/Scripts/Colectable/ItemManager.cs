@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Singleton;
 using TMPro;
+using UnityEngine.UI;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public static ItemManager Instance;
-    public int coins;
+    //public static ItemManager Instance;
     //public TMP_Text coinsText;
-    public TextMeshProUGUI uiTextCoin;
+    public int coins;
+    public TextMeshProUGUI uiTextCoins;
     
 
     private void Awake()
@@ -36,14 +37,15 @@ public class ItemManager : Singleton<ItemManager>
 
     public void AddCoins(int amount = 1)
     {
-        coins+= amount;
         //coinsText.text = coins.ToString();
+        coins+= amount;
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-       uiTextCoin.text = coins.ToString();
+        //uiTextCoins.text = coins.ToString();
+        UIInGameManager.UpdateTextCoins(coins.ToString());
     }
 
 
