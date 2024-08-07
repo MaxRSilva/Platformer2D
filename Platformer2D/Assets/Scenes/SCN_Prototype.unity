@@ -3066,6 +3066,7 @@ GameObject:
   - component: {fileID: 738799980}
   - component: {fileID: 738799982}
   - component: {fileID: 738799981}
+  - component: {fileID: 738799983}
   m_Layer: 5
   m_Name: TextCollectableCoin
   m_TagString: Untagged
@@ -3190,6 +3191,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738799979}
   m_CullTransparentMesh: 1
+--- !u!114 &738799983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738799979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9733938a0908f6243a5241f5fb7acf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soInt: {fileID: 11400000, guid: 129fc2cb26d493442b1e3808bac7c5c6, type: 2}
+  uiTextValue: {fileID: 738799981}
 --- !u!4 &762830172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5000455042689278068, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -6378,7 +6393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ba7e464ffe6924792549c35acc8c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: 129fc2cb26d493442b1e3808bac7c5c6, type: 2}
   uiTextCoins: {fileID: 738799981}
 --- !u!4 &1580739217
 Transform:
@@ -6678,10 +6693,10 @@ MonoBehaviour:
   forcejump: 27
   speedRun: 18
   healthBase: {fileID: 1753296663}
-  jumpScaleY: 1.5
-  jumpScaleX: 0.7
+  soJumpScareY: {fileID: 11400000, guid: b484acd1ebf0fbb46a69443d804b90a4, type: 2}
+  soJumpScareX: {fileID: 11400000, guid: 3305700d8370a7c4da1946e5046a097d, type: 2}
+  soAnimationDuration: {fileID: 11400000, guid: 401d8e9d8a51b4d4a96c96f7e7f2bd83, type: 2}
   DownScaleX: 0
-  animationDuration: 0.3
   ease: 27
   boolRun: Run
   animator: {fileID: 1466447348}
