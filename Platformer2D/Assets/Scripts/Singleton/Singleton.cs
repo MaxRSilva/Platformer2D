@@ -12,7 +12,7 @@ namespace Core.Singleton
         private void Awake()
         {
             if (Instance == null)
-                Instance = gameObject.AddComponent<T>();
+                Instance = gameObject.GetComponent<T>();
             else
                 Destroy(gameObject);
 
