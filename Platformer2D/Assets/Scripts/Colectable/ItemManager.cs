@@ -42,6 +42,22 @@ public class ItemManager : Singleton<ItemManager>
         UpdateUI();
     }
 
+
+    public void AddCoinsGreen(int amount = 5)
+    {
+        //coinsText.text = coins.ToString();
+        coins.value += amount;
+        UpdateUI();
+    }
+
+
+    public void AddCoinsBlue(int amount = 3)
+    {
+        //coinsText.text = coins.ToString();
+        coins.value += amount;
+        UpdateUI();
+    }
+
     public void UpdateUI()
     {
         //uiTextCoins.text = coins.ToString();
