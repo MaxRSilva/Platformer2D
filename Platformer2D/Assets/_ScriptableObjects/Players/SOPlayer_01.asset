@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   friction: {x: -0.3, y: 0}
-  speed: 21
+  speed: 40
   forcejump: 25
-  speedRun: 21
+  speedRun: 60
   JumpScaleY: 1.1
   JumpScaleX: 0.7
   AnimationDuration: 0.3
