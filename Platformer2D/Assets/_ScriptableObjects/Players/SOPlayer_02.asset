@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ce884428fa77542bb482cf1d7fa6f4, type: 3}
   m_Name: SOPlayer_02
   m_EditorClassIdentifier: 
-  player: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  player: {fileID: 6413013834153556191, guid: a205eb92b3a6e1c4db0c17d95891829b, type: 3}
   friction: {x: -0.3, y: 0}
-  speed: 30
-  forcejump: 25
-  speedRun: 35
+  speed: 25
+  forcejump: 30
+  speedRun: 30
   JumpScaleY: 1.1
   JumpScaleX: 0.7
   AnimationDuration: 0.3
