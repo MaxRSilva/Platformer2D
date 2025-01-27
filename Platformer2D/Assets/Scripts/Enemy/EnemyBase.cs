@@ -10,6 +10,7 @@ public class EnemyBase : MonoBehaviour
     public string trigerDeath = "Death";
     public HealthBase healthBase;
     public float timeToDestroy = 1f;
+    public AudioSource audioSourceKill;
 
 
 
@@ -26,6 +27,8 @@ public class EnemyBase : MonoBehaviour
         healthBase.OnKill += OnEnemyKill;
         PlayDeathAnimation();
         Destroy(gameObject, timeToDestroy);
+        if (audioSourceKill !=null)audioSourceKill.Play();
+        
 
     }
 
